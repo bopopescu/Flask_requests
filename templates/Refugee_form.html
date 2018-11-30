@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Refugee site</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="row justify-content-center">
+     <div class="col-6">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class=flashes>
+                    {% for message in messages %}
+                        <p class="text-info">{{ message }}</p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    <form method="post" action="/form">
+        <div class="form-group">
+            <label for="exampleInputname">name</label>
+            <input type="name" name="name" class="form-control" id="exampleInputname" aria-describedby="nameHelp"
+                   placeholder="Enter name">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your details.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputCountry">country</label>
+            <input type="country" name="country" class="form-control" id="exampleInputEmail1" aria-describedby="countryHelp"
+                   placeholder="Enter country">
+            <small id="countryHelp" class="form-text text-muted">We'll never share your Country with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Date of Birth</label>
+            <input type="dob" name="dob" class="form-control" id="exampleInputDob" aria-describedby="DobHelp"
+                   placeholder="Enter Gender">
+            <small id="DobHelp" class="form-text text-muted">We'll never share your Dob with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputGender">Gender</label>
+            <input type="gender" name="gender" class="form-control" id="exampleInputGender" aria-describedby="GenderHelp"
+                   placeholder="Enter Gender">
+            <small id="GenderHelp" class="form-text text-muted">We'll never share your Gender with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputweight">weight</label>
+            <input type="weight" name="weight" class="form-control" id="exampleInputweight" aria-describedby="weightHelp"
+                   placeholder="Enter weight">
+            <small id="weightHelp" class="form-text text-muted">We'll never share your weight with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputHeight">Height</label>
+            <input type="height" name="height" class="form-control" id="exampleInputHeight" aria-describedby="HeightHelp"
+                   placeholder="Enter Height">
+            <small id="HeightHelp" class="form-text text-muted">We'll never share your Height with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputColor">Color</label>
+            <input type="Color" name="color" class="form-control" id="exampleInputColor" aria-describedby="ColorHelp"
+                   placeholder="Enter Color">
+            <small id="ColorHelp" class="form-text text-muted">We'll never share your Color with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+</div>
+
+</body>
+</html>

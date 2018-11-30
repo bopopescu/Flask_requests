@@ -1,0 +1,27 @@
+/*.error_404{*/
+    /*margin-top: 3%;*/
+    /*margin-right: 100px;*/
+    /*position: absolute;*/
+    /*!*width: 30%;*!*/
+    /*!*padding: 10px;*!*/
+
+/*}*/
+.error_404 {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 500px;
+   height: 500px;
+   margin-top: -250px; /* Half the height */
+   margin-left: -400px; /* Half the width */
+}
+h2{
+    color: red !important;
+    text-align: center;
+    margin-top: 14%;
+}
+.background
+{
+    background-image: url("../static/img/error.jpg");
+    background-color: #500000;
+}

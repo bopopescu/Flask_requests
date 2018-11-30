@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Refugee Output</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container">
+    <table class="table">
+        <tr>
+
+        <th>Names</th>
+        <th>Gender</th>
+        <th>Date-of-Birth</th>
+        <th>Weight</th>
+        <th>Height</th>
+        <th>Color</th>
+        <th>Country</th>
+
+        </tr>
+      {% for refugee in refugees %}
+   <tr>
+            <td>{{ refugee[0] }}</td>
+            <td>{{ refugee[1]  }}</td>
+            <td>{{ refugee[2] }}</td>
+            <td>{{ refugee[3]  }}</td>
+            <td>{{ refugee[4]  }}</td>
+            <td>{{ refugee[5]  }}</td>
+            <td>{{ refugee[6]  }}</td>
+    </tr>
+       {% endfor %}
+
+
+    </table>
+</div>
+</body>
+</html>
