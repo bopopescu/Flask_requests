@@ -10,7 +10,7 @@ app.secret_key ='fsadfgsgs45ys3564'
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return redirect(url_for('form'))
 
 @app.route('/form', methods=['POST', 'GET'])
 def form():
@@ -22,6 +22,8 @@ def form():
         height = request.form["height"]
         color = request.form["color"]
         country = request.form["country"]
+        # id =
+
 
         print(name,gender,dob,weight,height,color,country)
         cursor = db.cursor()
@@ -41,6 +43,23 @@ def matokeo():
     cursor.execute(sql)
     refugees = cursor.fetchall()
     return render_template('Refugee_output.html', refugees=refugees)
+
+@app.route('/delete')
+def remove():
+    cursor = db.cursor()
+    sql = "SELECT * FROM `refugee`"
+    cursor.execute(sql)
+    refugees = cursor.fetchall()
+    return render_template('remove.html', refugees=refugees)
+
+@app.route('/del/<id>')
+def del_ref(id):
+    cursor = db.cursor()
+    sql = "DELETE FROM refugee WHERE id=%s"
+    cursor.execute(sql, (id,))
+    db.commit()
+    flash('Refugee Removed Successfully')
+    return redirect(url_for('remove'))
 
 @app.errorhandler(404)
 def error_page(e):
