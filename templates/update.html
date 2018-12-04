@@ -1,0 +1,45 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+    <div class="container">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class=flashes>
+                    {% for message in messages %}
+                        <p class="text-info text-center">{{ message }}</p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <table class="table">
+        <tr>
+
+            <th>Names</th>
+            <th>Country</th>
+            <th>Date-of-Birth</th>
+            <th>Gender</th>
+            <th>Weight</th>
+            <th>Height</th>
+            <th>Color</th>
+            <th>Update</th>
+
+        </tr>
+        {% for refugee in refugees %}
+            <tr>
+                <td>{{ refugee[0] }}</td>
+                <td>{{ refugee[1] }}</td>
+                <td>{{ refugee[2] }}</td>
+                <td>{{ refugee[3] }}</td>
+                <td>{{ refugee[4] }}</td>
+                <td>{{ refugee[5] }}</td>
+                <td>{{ refugee[6] }}</td>
+                <td><a href="/update/{{ refugee[7] }}" class="btn btn-success btn-sm">Update</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+
+
+
+{% endblock %}

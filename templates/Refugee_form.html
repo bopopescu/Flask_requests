@@ -13,15 +13,16 @@
                 </ul>
             {% endif %}
         {% endwith %}
-    <form method="post" action="/form">
+
+    <form method="post" action="/form" id="true">
         <div class="form-group">
-            <label for="exampleInputname">name</label>
+            <label for="exampleInputname">Name</label>
             <input type="name" name="name" class="form-control" id="exampleInputname" aria-describedby="nameHelp"
                    placeholder="Enter name">
             <small id="emailHelp" class="form-text text-muted">We'll never share your details.</small>
         </div>
         <div class="form-group">
-            <label for="exampleInputCountry">country</label>
+            <label for="exampleInputCountry">Country</label>
             <input type="country" name="country" class="form-control" id="exampleInputEmail1" aria-describedby="countryHelp"
                    placeholder="Enter country">
             <small id="countryHelp" class="form-text text-muted">We'll never share your Country with anyone else.</small>
@@ -39,7 +40,7 @@
             <small id="GenderHelp" class="form-text text-muted">We'll never share your Gender with anyone else.</small>
         </div>
         <div class="form-group">
-            <label for="exampleInputweight">weight</label>
+            <label for="exampleInputweight">Weight</label>
             <input type="weight" name="weight" class="form-control" id="exampleInputweight" aria-describedby="weightHelp"
                    placeholder="Enter weight">
             <small id="weightHelp" class="form-text text-muted">We'll never share your weight with anyone else.</small>
@@ -66,5 +67,6 @@
 
 </div>
 </div>
+
 
 {% endblock %}
